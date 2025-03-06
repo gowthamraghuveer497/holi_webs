@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Holi Sleepover</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f9f3cc;
+        }
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+        #reasons, #decision {
+            display: none;
+            margin-top: 20px;
+        }
+        #yesNoButtons button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+        }
+        #yesBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn" id="reasonBtn">Reason for you to agree for a pre-Holi sleepover</button>
+    
+    <div id="reasons">
+        <ul>
+            <li>1. Holi preparation fun!</li>
+            <li>2. Bonding time with friends.</li>
+            <li>3. Midnight snacks and gossip.</li>
+            <li>4. Planning Holi outfits together.</li>
+            <li>5. Late-night dance party.</li>
+            <li>6. Making homemade colors.</li>
+            <li>7. Watching Holi-themed movies.</li>
+            <li>8. Waking up to a fun-filled morning.</li>
+            <li>9. Avoiding FOMO!</li>
+            <li>10. Just because it's Holi!!</li>
+        </ul>
+        <div id="decision">
+            <p>Are you in?</p>
+            <div id="yesNoButtons">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById("reasonBtn").addEventListener("click", function() {
+            document.getElementById("reasons").style.display = "block";
+            document.getElementById("decision").style.display = "block";
+        });
+
+        let noBtn = document.getElementById("noBtn");
+        let yesBtn = document.getElementById("yesBtn");
+        let yesBtnSize = 18;
+        
+        noBtn.addEventListener("click", function() {
+            yesBtnSize += 10;
+            yesBtn.style.fontSize = yesBtnSize + "px";
+        });
+
+        yesBtn.addEventListener("click", function() {
+            confetti();
+            alert("Thank you!");
+        });
+    </script>
+</body>
+</html>
